@@ -36,6 +36,7 @@ syntax  match  TodoPriorityW  '^([wW])\s.\+$'             contains=TodoDate,Todo
 syntax  match  TodoPriorityX  '^([xX])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
 syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
 syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
+syntax  match  NoPriorityNotDone '^([zZ])\s.\+$'          contains=TodoDate,TodoProject,TodoContext,OverDueDate
 
 syntax  match  TodoDate       '\d\{2,4\}-\d\{2\}-\d\{2\}' contains=NONE
 syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
@@ -49,6 +50,7 @@ highlight  default  link  TodoPriorityC  Identifier
 highlight  default  link  TodoDate       PreProc
 highlight  default  link  TodoProject    Special
 highlight  default  link  TodoContext    Special
+highlight  default  link  NoPriorityNotDone  Error
 
 if exists('g:todo_load_python') && g:todo_load_python
     if has('python')
