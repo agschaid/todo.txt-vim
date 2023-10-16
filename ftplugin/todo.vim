@@ -46,6 +46,14 @@ vnoremap <script> <silent> <buffer> <localleader>d :call todo#txt#prioritize_add
 nnoremap <script> <silent> <buffer> <localleader>e :call todo#txt#prioritize_add('E')<CR>
 vnoremap <script> <silent> <buffer> <localleader>e :call todo#txt#prioritize_add('E')<CR>
 
+"" move to notNow file
+nnoremap <localleader>n V:!cat >> notNow.txt<CR>
+vnoremap <localleader>n :!cat >> notNow.txt<CR>
+
+"" move to todo file
+nnoremap <localleader>t V:!cat >> todo.txt<CR>
+vnoremap <localleader>t :!cat >> todo.txt<CR>
+
 " Insert date {{{2
 "inoremap <script> <silent> <buffer> date<Tab> <C-R>=strftime("%Y-%m-%d")<CR>
 "nnoremap <script> <silent> <buffer> <localleader>d :call todo#txt#replace_date()<CR>
